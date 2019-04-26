@@ -27,4 +27,19 @@ public class DoctorController {
         return doctorMapper.insertDoc(doctor);
     }
 
+    /**查询所有员工返回列表页面
+     *
+     * @param model
+     * @return
+     */
+    @GetMapping("/docs")
+    public String list(Model model) {
+        Collection<Employee> employees = employeeDao.getAll();
+        //放在请求域中
+        model.addAttribute("emps", employees);
+        // thymeleaf默认就会拼串
+        // classpath:/templates/xxxx.html
+        return "doc/list";
+    }
+
 }
