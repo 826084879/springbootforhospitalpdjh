@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@192.168.8.244:1521:bimtest
+    username: bimtest1
+    password: bimtest1
+    driver-class-name: oracle.jdbc.driver
+server:
+  port: 8086
+
+mybatis:
+  # 指定全局配置文件位置
+  config-location: classpath:mybatis/mybatis-config.xml
+  # 指定sql映射文件位置
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+#the first datasource
+jdbc:
+  driverClassName: oracle.jdbc.driver
+  url: jdbc:oracle:thin:@192.168.8.244:1521:bimtest
+  username: bimtest1
+  password: bimtest1
+
+#the second datasource
+jdbc2:
+  driverClassName = com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/mytestdb2?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8
+  username: root
+  password: 123

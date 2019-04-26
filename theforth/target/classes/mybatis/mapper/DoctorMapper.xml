@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hospital.theforth.mapper.DoctorMapper">
+
+    <select id="getDocById" resultType="com.hospital.theforth.bean.Doctor">
+        SELECT * FROM BIM_TEST_EMP WHERE doc_Id=#{doc_Id}
+    </select>
+
+    <!--useGeneratedKeys="true" keyProperty="doc_id" keyColumn="doc_id"-->
+    <insert id="insertDoc" parameterType="com.hospital.theforth.bean.Doctor">
+
+        insert into BIM_TEST_EMP (doc_id,docName) values (#{docId},#{docName})
+    </insert>
+
+    <delete id="delDoc">
+        delete from BIM_TEST_EMP where docId=#{docId}
+    </delete>
+
+
+    <update id="updateDoc" parameterType="com.hospital.theforth.bean.Doctor">
+        update BIM_TEST_EMP set docName=#{docName} where docId=#{docId}
+    </update>
+
+
+
+
+</mapper>

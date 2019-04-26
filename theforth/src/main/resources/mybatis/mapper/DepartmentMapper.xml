@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hospital.theforth.mapper.DepartmentMapper">
+
+    <select id="getDeptById" resultType="com.hospital.theforth.bean.Department">
+        select * from department where id=#{id}
+    </select>
+
+    <insert id="insertDept" >
+        insert into department(department_name) values(#{departmentName}
+    </insert>
+
+
+   <delete id="deleteDeptById">
+       delete from department where id=#{id}
+   </delete>
+
+    <update id="updateDept">
+        update department set department_name=#{departmentName} where id=#{id}
+    </update>
+
+</mapper>
