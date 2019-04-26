@@ -31,6 +31,7 @@ public class DoctorController {
      *
      * @param model
      * @return
+     * @auther zyg
      */
     @GetMapping("/docs")
     public String list(Model model) {
